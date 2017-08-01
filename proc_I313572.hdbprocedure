@@ -1,0 +1,18 @@
+PROCEDURE "tinydb_I313572.db::proc_I313572" (
+		in continent NVARCHAR(60),
+		out names "tinydb_I313572.db::dbcds.country" default empty
+		)
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+   /*************************************
+       Write your procedure logic 
+   *************************************/
+ names = SELECT TOP 1000
+	"name",
+	"partof.continent"
+FROM "tinydb_I313572.db::dbcds.country"
+where "partof.continent" = continent ;
+END
