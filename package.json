@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@sap/xsjs": "1.13.1",
+    "@sap/xsenv": "1.2.6",
+    "express": "^4.13.0"
+  },
+  "devDependencies": {
+    "@sap/xsjs-test": "2.0.2"
+  },
+  "files": [],
+  "main": "server.js",
+  "name": "countries_crud_I313572",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node testrun.js"
+  },
+  "engines": {
+    "node": "6.x"
+  },
+  "version": "1.0.0"
+}
