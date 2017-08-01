@@ -1,0 +1,32 @@
+ID: tinydb_I313572
+_schema-version: '2.0'
+description: descriere
+version: 0.0.1
+
+modules:
+ - name: db
+   type: hdb
+   path: db
+   requires:
+    - name: hdi-container
+
+
+ - name: countries_crud_I313572
+   type: nodejs
+   path: countries_crud_I313572
+   requires: 
+   - name: db
+   - name: hdi-container
+   provides:
+    - name: countries_crud_I313572_api
+      properties:
+         url: ${default-url}
+
+resources:
+ - name: hdi-container
+   parameters:
+      config:
+         schema: bazadedate
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
